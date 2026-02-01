@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dhejesh — Tiny Systems, Sharp Tools</title>
-  <meta name="description" content="Dhejesh builds tiny compilers, interpreters, and operating systems." />
+  <title>Dhejesh — Minimal Tools & Tiny Systems</title>
+  <meta name="description" content="Dhejesh creates tiny compilers, interpreters, and enjoys building minimal programming tools." />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0e0e11;
@@ -13,6 +14,7 @@
       --accent: #7aa2f7;
       --card: #15161a;
       --border: #22242a;
+      --shadow: rgba(0,0,0,0.35);
     }
     * { box-sizing: border-box; }
     html, body { height: 100%; }
@@ -20,90 +22,104 @@
       margin: 0;
       background: radial-gradient(1200px 600px at 10% -10%, #14151b, transparent), var(--bg);
       color: var(--fg);
-      font: 15px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1.6;
+      font-size: 16px;
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .wrap {
-      max-width: 920px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 56px 20px 72px;
+      padding: 60px 24px 80px;
     }
     header {
-      display: grid;
-      gap: 16px;
-      margin-bottom: 40px;
+      text-align: center;
+      margin-bottom: 60px;
     }
     h1 {
-      font-size: clamp(28px, 5vw, 40px);
-      line-height: 1.2;
+      font-size: clamp(36px, 6vw, 56px);
       margin: 0;
       letter-spacing: -0.02em;
     }
-    .tagline { color: var(--muted); max-width: 720px; }
+    .tagline {
+      color: var(--muted);
+      font-size: 18px;
+      margin-top: 8px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .links a {
+      margin: 0 12px;
+      font-weight: 700;
+    }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
     }
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent), var(--card);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent), var(--card);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px 18px 20px;
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
-    .card h2 { margin: 0 0 8px; font-size: 18px; }
-    .card p { margin: 0; color: var(--muted); }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px var(--shadow);
+    }
+    .card h2 { margin: 0 0 12px; font-size: 22px; }
+    .card p { margin: 0; color: var(--muted); font-size: 16px; }
+    section#about { margin-top: 40px; padding: 24px; }
     footer {
-      margin-top: 56px;
+      margin-top: 80px;
       color: var(--muted);
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
+      text-align: center;
+      font-size: 14px;
     }
-    .links a { margin-right: 12px; }
-    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .highlight { color: var(--accent); font-weight: 700; }
+    ul { margin-top: 8px; padding-left: 20px; }
   </style>
 </head>
 <body>
   <main class="wrap">
     <header>
       <h1>Dhejesh</h1>
-      <p class="tagline">I build tiny compilers, interpreters, and operating systems. Minimal binaries. Direct machine code. LuaJIT when it counts.</p>
+      <p class="tagline">I explore minimal programming systems, building compilers, interpreters, and small tools with efficiency and clarity in mind. Direct machine code where it matters, LuaJIT when I need it.</p>
       <div class="links">
         <a href="https://github.com/" aria-label="GitHub">GitHub</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
+        <a href="#about">About Me</a>
       </div>
     </header>
 
-    <section id="projects" class="grid">
-      <article class="card">
-        <h2>Languages & Compilers</h2>
-        <p>Buffer, Obufutsa25, OTCCW — compact interpreters and compilers with a bias toward clarity and size.</p>
-      </article>
-      <article class="card">
-        <h2>Operating Systems</h2>
-        <p>Mice OS — command-line focused, pragmatic, and intentionally small.</p>
-      </article>
-      <article class="card">
-        <h2>Tooling</h2>
-        <p>Editors, installers, and build utilities that value speed and restraint.</p>
-      </article>
-    </section>
-
-    <section id="about" class="card" style="margin-top:16px">
-      <h2>About</h2>
-      <p class="mono">Arch-based Linux · NASM · C/C++ · LuaJIT · WinAPI · SDL · ANSI terminals</p>
+    <section id="about" class="card">
+      <h2>About Me</h2>
+      <p><span class="highlight">Who I am:</span> I am Dhejesh, a curious 13-year-old programmer exploring the edges of minimal programming systems.</p>
+      <p><span class="highlight">What I love:</span></p>
+      <ul>
+        <li>Tiny compilers</li>
+        <li>Modal editors</li>
+      </ul>
+      <p><span class="highlight">What I am good at:</span></p>
+      <ul>
+        <li>C</li>
+        <li>C++</li>
+        <li>Assembly</li>
+        <li>Zig</li>
+        <li>Lua</li>
+        <li>Compiler creation</li>
+        <li>Interpreter creation</li>
+        <li>Bootloader creation</li>
+      </ul>
     </section>
 
     <footer>
-      <span>© <span id="y"></span> Dhejesh</span>
-      <span class="mono">Built small. Runs fast.</span>
+      <span>© <span id="y"></span> Dhejesh</span> · <span class="highlight">Built small. Runs fast.</span>
     </footer>
   </main>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
