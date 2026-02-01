@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dhejesh — Tiny Systems, Sharp Tools</title>
+  <meta name="description" content="Dhejesh builds tiny compilers, interpreters, and operating systems." />
+  <style>
+    :root {
+      --bg: #0e0e11;
+      --fg: #e6e6eb;
+      --muted: #9aa0a6;
+      --accent: #7aa2f7;
+      --card: #15161a;
+      --border: #22242a;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 10% -10%, #14151b, transparent), var(--bg);
+      color: var(--fg);
+      font: 15px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 56px 20px 72px;
+    }
+    header {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: clamp(28px, 5vw, 40px);
+      line-height: 1.2;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+    .tagline { color: var(--muted); max-width: 720px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent), var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 18px 20px;
+    }
+    .card h2 { margin: 0 0 8px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); }
+    footer {
+      margin-top: 56px;
+      color: var(--muted);
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .links a { margin-right: 12px; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Dhejesh</h1>
+      <p class="tagline">I build tiny compilers, interpreters, and operating systems. Minimal binaries. Direct machine code. LuaJIT when it counts.</p>
+      <div class="links">
+        <a href="https://github.com/" aria-label="GitHub">GitHub</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+      </div>
+    </header>
+
+    <section id="projects" class="grid">
+      <article class="card">
+        <h2>Languages & Compilers</h2>
+        <p>Buffer, Obufutsa25, OTCCW — compact interpreters and compilers with a bias toward clarity and size.</p>
+      </article>
+      <article class="card">
+        <h2>Operating Systems</h2>
+        <p>Mice OS — command-line focused, pragmatic, and intentionally small.</p>
+      </article>
+      <article class="card">
+        <h2>Tooling</h2>
+        <p>Editors, installers, and build utilities that value speed and restraint.</p>
+      </article>
+    </section>
+
+    <section id="about" class="card" style="margin-top:16px">
+      <h2>About</h2>
+      <p class="mono">Arch-based Linux · NASM · C/C++ · LuaJIT · WinAPI · SDL · ANSI terminals</p>
+    </section>
+
+    <footer>
+      <span>© <span id="y"></span> Dhejesh</span>
+      <span class="mono">Built small. Runs fast.</span>
+    </footer>
+  </main>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
